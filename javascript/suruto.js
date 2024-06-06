@@ -739,14 +739,3 @@ function kmConvert(rmInput) { // convert romaji (michael) to kana (michael)
 
     return kmOutput.trim(); // trim and return output
 };
-
-/*
-let output = [];
-if (message.lcCommand == "mikaeru") {
-    output = rmConvert(message.lcArgsText);
-    if (!output[1]) output[0] = kmConvert(output[0]);
-}
-else {
-    output = rsConvert(message.lcArgsText);
-    if (!output[1]) output[0] = ksConvert(output[0]);
-};*/

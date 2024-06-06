@@ -2,33 +2,41 @@
 <html lang="en">
 
 <head>
-    <link rel="icon" type="image/png" href="../assets/favicon.png">
+    <link rel="icon" type="image/png" href="../global-assets/pictures/favicon.png">
     <title>surtrspeak translator | monoyoshi.github.io</title>
 
     <!-- stylesheets -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <!-- global -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../global-assets/css/colors.css">
+    <link rel="stylesheet" href="../global-assets/css/fonts.css">
+    
+    <link rel="stylesheet" href="../global-assets/css/style.css">
+
+    <!-- local -->
+    <link rel="stylesheet" href="style.css">    
 
     <!-- scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-    <script src="../javascript/main.js"></script>
-    <script src="../javascript/boilerplate.js"></script>
+    <script src="../global-assets/javascript/boilerplate.js"></script>
     <script>
         // insert header and footer
         $(document).ready(function () {
-            // $("header").html(header(1, "projects", "surtranslate"));
-            $("footer").html(footer(1));
+            /*header(1, "projects");*/
+            footer(1, true);
         });
     </script>
 
-    <script src="code/surtr.js"></script>
-    <script src="code/suruto.js"></script>
-    <script src="code/script.js"></script>
+    <!-- local -->
+    <script src="javascript/surtr.js"></script>
+    <script src="javascript/suruto.js"></script>
+    <script src="javascript/script.js"></script>
 
     <script src="https://unpkg.com/wanakana"></script>
-    <img src="assets/surtr.png" width="45%" style="position: fixed; bottom: -30%; right: -10%; opacity: 45%; z-index: -99;">
 </head>
 
 <body>
@@ -44,12 +52,12 @@
         <div class="flexbox column" id="latin">
             <div class="flexbox center" style="width: 100%;">
                 <div class="textbox" style="width: 50%;">
-                    <div class="h1">Michael</div>
-                    <textarea type="text" id="michael-textbox" name="michael-textbox" autocomplete="off" placeholder="enter text here" rows="1" style="height: 9em; width: 100%; font-size: 1.5em; resize: none;"></textarea>
+                    <div class="h2">Michael</div>
+                    <textarea type="text" id="michael-textbox" name="michael-textbox" autocomplete="off" placeholder="enter text here" rows="1" style="height: 100px; width: 100%; font-size: 18px; resize: none;"></textarea>
                 </div>
                 <div class="textbox" style="width: 50%;">
-                    <div class="h1">Surtr</div>
-                    <textarea type="text" id="surtr-textbox" name="surtr-textbox" autocomplete="off" placeholder="...ut jiti?" rows="1" style="height: 9em; width: 100%; font-size: 1.5em; resize: none;"></textarea>
+                    <div class="h2">Surtr</div>
+                    <textarea type="text" id="surtr-textbox" name="surtr-textbox" autocomplete="off" placeholder="...ut jiti?" rows="1" style="height: 100px; width: 100%; font-size: 18px; resize: none;"></textarea>
                 </div>
             </div>
             <br>
@@ -127,12 +135,12 @@
         <div class="flexbox column" id="japanese" style="display: none;">
             <div class="flexbox center" style="width: 100%;">
                 <div class="textbox" style="width: 50%;">
-                    <div class="h1">ミカエル語</div>
-                    <textarea type="text" id="mikaeru-textbox" name="mikaeru-textbox" autocomplete="off" placeholder="ここでテキストをいれて" rows="1" style="height: 9em; width: 100%; font-size: 1.5em; resize: none;"></textarea>
+                    <div class="h2">ミカエル語</div>
+                    <textarea type="text" id="mikaeru-textbox" name="mikaeru-textbox" autocomplete="off" placeholder="ここでテキストをいれて" rows="1" style="height: 100px; width: 100%; font-size: 18px; resize: none;"></textarea>
                 </div>
                 <div class="textbox" style="width: 50%;">
-                    <div class="h1">スルト語</div>
-                    <textarea type="text" id="suruto-textbox" name="suruto-textbox" autocomplete="off" placeholder="ｃ；ｓｍ･･･ｂｂ？" rows="1" style="height: 9em; width: 100%; font-size: 1.5em; resize: none;"></textarea>
+                    <div class="h2">スルト語</div>
+                    <textarea type="text" id="suruto-textbox" name="suruto-textbox" autocomplete="off" placeholder="ｃ；ｓｍ･･･ｂｂ？" rows="1" style="height: 100px; width: 100%; font-size: 18px; resize: none;"></textarea>
                 </div>
             </div>
             <br>
@@ -300,17 +308,17 @@
                     </tr>
                 </table>
                 <p>
-                    ※濁点、半濁点、カタカナは見逃された。漢字も見逃されたから、機能するために、ひらがなで書いてください。
+                    ※濁点、半濁点、カタカナが見逃された。漢字も見逃されたから、機能するために、ひらがなで書いてください。
                 </p>
                 <p>
-                    下記は例だ：
+                    例：
                 </p>
                 <div class="flexbox center">
                     <div class="quote" style="width: 50%; font-style: normal;">
                         <span class="tooltip">わたしはしわはらまくくろきはめつ！<span class="ttpopup">私はしわばら撒く黒き破滅!</span></span><br>
                         <span class="tooltip">ほのおかさかまきたいちはしすむ！<span class="ttpopup">炎か逆巻きたい地端澄む！</span></span><br>
                         <span class="tooltip">きさまはろき･･････<span class="ttpopup">貴様まはロキ･･････</span></span><br>
-                        <span class="tooltip">そうかねかいしゆうにきたののな。<span class="ttpopup">そうかね開始優に来たののな</span>
+                        <span class="tooltip">そうかねかいしゆうにきたののな。<span class="ttpopup">そうかね開始優に来たののな。</span>
                     </div>
                     <div class="quote" style="width: 50%; font-style: normal;">
                         <span class="tooltip">０ｑｄｆｄ０ふぉｊｈｈ￥ｇｆ／ｚ！<span class="ttpopup">０ｑｄｆｄ０ｆｏｊｈｈ￥ｇｆ／ｚ！</span></span><br>
@@ -324,6 +332,10 @@
     </article>
 
     <footer></footer>
+
+    <div id="viewport">
+        <img src="assets/surtr.png" width="45%" style="position: fixed; bottom: -30%; right: -10%; opacity: 0.45;">
+    </div>
 </body>
 
 </html>

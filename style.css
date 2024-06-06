@@ -1,0 +1,20 @@
+* {
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 900;
+}
+
+html {
+    font-style: normal;
+}
+
+article {
+    animation-name: none;
+}
+
+#active {
+    background-color: var(--a_lightblue);
+}
+
+#viewport {
+    background-image: linear-gradient(190deg, var(--black), var(--dgray));
+}

@@ -1,3 +1,6 @@
+let $latin = $("#latin");
+let $japanese = $("#japanese");
+
 function toggleEN() {
     $("textarea").val("");
     $("#latin").css("display", "flex");
@@ -10,6 +13,7 @@ function toggleJP() {
 };
 
 $(document).ready(function () {
+
     $("#michael-textbox").keyup(function () {
         $("#surtr-textbox").val((sConvert($("#michael-textbox").val())));
     });
