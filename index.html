@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-    <link rel="icon" type="image/png" href="../global-assets/images/favicon.png">
-    <title>surtrspeak translator | monoyoshi.github.io</title>
+    <link rel="icon" type="image/png" href="https://cdn.bladewyrm.dev/global/images/favicon.png">
+    <title>surtrspeak translator | bladewyrm.dev</title>
 
     <!-- stylesheets -->
     <!-- global -->
@@ -11,10 +11,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../global-assets/css/colors.css">
-    <link rel="stylesheet" href="../global-assets/css/fonts.css">
+    <link rel="stylesheet" href="https://cdn.bladewyrm.dev/global/css/colors.css">
+    <link rel="stylesheet" href="https://cdn.bladewyrm.dev/global/css/fonts.css">
     
-    <link rel="stylesheet" href="../global-assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.bladewyrm.dev/global/css/style.css">
+    <link rel="stylesheet" href="https://cdn.bladewyrm.dev/global/css/dust.css">
+    <link rel="stylesheet" href="https://cdn.bladewyrm.dev/global/css/cursor.css">
 
     <!-- local -->
     <link rel="stylesheet" href="style.css">    
@@ -22,12 +24,14 @@
     <!-- scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-    <script src="../global-assets/javascript/boilerplate.js"></script>
+    <script src="https://cdn.bladewyrm.dev/global/javascript/boilerplate.js"></script>
+    <script src="https://cdn.bladewyrm.dev/global/javascript/dust.js"></script>
+    <script src="https://cdn.bladewyrm.dev/global/javascript/cursor.js"></script>
+
     <script>
         // insert header and footer
         $(document).ready(function () {
-            /*header(1, "projects");*/
-            footer(1, true);
+            footer();
         });
     </script>
 
@@ -40,10 +44,13 @@
 </head>
 
 <body>
+    <div id="tap"></div>
+    <div id="drag"></div>
+
     <header></header>
 
-    <article style="margin-top: 0;">
-        <div class="frame"><img src="logo.gif"></div>
+    <main style="margin-top: 0;">
+        <div class="frame"><img src="images/logo.gif"></div>
         <div class="flexbox center">
             <button onclick="toggleEN()" class="navbutton" id="active">Latin alphabet / ローマ字</button>
             <button onclick="toggleJP()" class="navbutton">Japanese / 日本語</button>
@@ -310,9 +317,7 @@
                 <p>
                     ※濁点、半濁点、カタカナが見逃された。漢字も見逃されたから、機能するために、ひらがなで書いてください。
                 </p>
-                <p>
-                    例：
-                </p>
+                例：
                 <div class="flexbox center">
                     <div class="quote" style="width: 50%; font-style: normal;">
                         <span class="tooltip">わたしはしわはらまくくろきはめつ！<span class="ttpopup">私はしわばら撒く黒き破滅!</span></span><br>
@@ -329,12 +334,13 @@
                 </div>
             </div>
         </div>
-    </article>
+    </main>
 
     <footer></footer>
 
     <div id="viewport">
-        <img src="assets/surtr.png" width="45%" style="position: fixed; bottom: -30%; right: -10%; opacity: 0.45;">
+        <div id="dust-canvas"></div>
+        <img src="images/surtr.png" width="45%" style="position: fixed; bottom: -30%; right: -10%; opacity: 0.45;">
     </div>
 </body>
 
