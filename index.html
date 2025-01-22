@@ -5,6 +5,8 @@
     <link rel="icon" type="image/png" href="https://cdn.bladewyrm.dev/global/images/favicon.png">
     <title>surtrspeak translator | bladewyrm.dev</title>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <!-- stylesheets -->
     <!-- global -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,10 +15,11 @@
 
     <link rel="stylesheet" href="https://cdn.bladewyrm.dev/global/css/colors.css">
     <link rel="stylesheet" href="https://cdn.bladewyrm.dev/global/css/fonts.css">
-    
     <link rel="stylesheet" href="https://cdn.bladewyrm.dev/global/css/style.css">
-    <link rel="stylesheet" href="https://cdn.bladewyrm.dev/global/css/dust.css">
+    <link rel="stylesheet" href="https://cdn.bladewyrm.dev/global/css/mobile.css">
+
     <link rel="stylesheet" href="https://cdn.bladewyrm.dev/global/css/cursor.css">
+    <link rel="stylesheet" href="https://cdn.bladewyrm.dev/global/css/dust.css">
 
     <!-- local -->
     <link rel="stylesheet" href="style.css">    
@@ -25,8 +28,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <script src="https://cdn.bladewyrm.dev/global/javascript/boilerplate.js"></script>
-    <script src="https://cdn.bladewyrm.dev/global/javascript/dust.js"></script>
     <script src="https://cdn.bladewyrm.dev/global/javascript/cursor.js"></script>
+    <script src="https://cdn.bladewyrm.dev/global/javascript/dust.js"></script>
+
+
+    <!-- local -->
+    <script src="javascript/script.js"></script>
+    <script src="javascript/surtr.js"></script>
+    <script src="javascript/suruto.js"></script>
+
+    <script src="https://unpkg.com/wanakana"></script>
 
     <script>
         // insert header and footer
@@ -34,13 +45,6 @@
             footer();
         });
     </script>
-
-    <!-- local -->
-    <script src="javascript/surtr.js"></script>
-    <script src="javascript/suruto.js"></script>
-    <script src="javascript/script.js"></script>
-
-    <script src="https://unpkg.com/wanakana"></script>
 </head>
 
 <body>
@@ -49,299 +53,313 @@
 
     <header></header>
 
-    <main style="margin-top: 0;">
-        <div class="frame"><img src="images/logo.gif"></div>
-        <div class="flexbox center">
-            <button onclick="toggleEN()" class="navbutton" id="active">Latin alphabet / ローマ字</button>
-            <button onclick="toggleJP()" class="navbutton">Japanese / 日本語</button>
-        </div>
-
-        <div class="flexbox column" id="latin">
-            <div class="flexbox center" style="width: 100%;">
-                <div class="textbox" style="width: 50%;">
-                    <div class="h2">Michael</div>
-                    <textarea type="text" id="michael-textbox" name="michael-textbox" autocomplete="off" placeholder="enter text here" rows="1" style="height: 100px; width: 100%; font-size: 18px; resize: none;"></textarea>
-                </div>
-                <div class="textbox" style="width: 50%;">
-                    <div class="h2">Surtr</div>
-                    <textarea type="text" id="surtr-textbox" name="surtr-textbox" autocomplete="off" placeholder="...ut jiti?" rows="1" style="height: 100px; width: 100%; font-size: 18px; resize: none;"></textarea>
-                </div>
-            </div>
-            <br>
-            <div class="textbox" id="latin">
-                <p>
-                    Surtr's speech can be decoded by using a substitution cipher with the following key:
-                </p>
-                <table class="transparent">
-                    <tr>
-                        <td>A</td>
-                        <td>B</td>
-                        <td>C</td>
-                        <td>D</td>
-                        <td>E</td>
-                        <td>F</td>
-                        <td>G</td>
-                        <td>H</td>
-                        <td>I</td>
-                        <td>J</td>
-                        <td>K</td>
-                        <td>L</td>
-                        <td>M</td>
-                        <td>N</td>
-                        <td>O</td>
-                        <td>P</td>
-                        <td>Q</td>
-                        <td>R</td>
-                        <td>S</td>
-                        <td>T</td>
-                        <td>U</td>
-                        <td>V</td>
-                        <td>W</td>
-                        <td>X</td>
-                        <td>Y</td>
-                        <td>Z</td>
-                    </tr>
-                    <tr>
-                        <td>E</td>
-                        <td>N</td>
-                        <td>V</td>
-                        <td>S</td>
-                        <td>I</td>
-                        <td>G</td>
-                        <td>F</td>
-                        <td>J</td>
-                        <td>O</td>
-                        <td>H</td>
-                        <td>L</td>
-                        <td>K</td>
-                        <td>B</td>
-                        <td>M</td>
-                        <td>U</td>
-                        <td>Y</td>
-                        <td>W</td>
-                        <td>T</td>
-                        <td>D</td>
-                        <td>R</td>
-                        <td>A</td>
-                        <td>C</td>
-                        <td>Q</td>
-                        <td>Z</td>
-                        <td>P</td>
-                        <td>X</td>
-                    </tr>
-                </table>
-                <p>
-                    In-game, the only letters Surtr doesn't use are H and Z. If he does (if he ever will 😔), H will
-                    most likely correspond to J, and Z will most likely correspond to X.
-                </p>
-                <p>Letters with diacritics (ö, ú) are ignored.</p>
-                </div>
+    <main>
+        <div class="row">
+            <div class="column-100" style="text-align: center;">
+                <img src="images/logo.gif">
             </div>
         </div>
-
-        <div class="flexbox column" id="japanese" style="display: none;">
-            <div class="flexbox center" style="width: 100%;">
-                <div class="textbox" style="width: 50%;">
-                    <div class="h2">ミカエル語</div>
-                    <textarea type="text" id="mikaeru-textbox" name="mikaeru-textbox" autocomplete="off" placeholder="ここでテキストをいれて" rows="1" style="height: 100px; width: 100%; font-size: 18px; resize: none;"></textarea>
-                </div>
-                <div class="textbox" style="width: 50%;">
-                    <div class="h2">スルト語</div>
-                    <textarea type="text" id="suruto-textbox" name="suruto-textbox" autocomplete="off" placeholder="ｃ；ｓｍ･･･ｂｂ？" rows="1" style="height: 100px; width: 100%; font-size: 18px; resize: none;"></textarea>
-                </div>
-            </div>
-            <br>
-            <div class="textbox" style="width: 100%;">
-                <p>
-                    日本語でスルトの言うことをわかるのは･･･大変だ。<br>
-                    しかし！やったよ！！スルト語の翻訳プログラムできた！！！！<br>
-                    どのように働く？電子キーは下：
-                </p>
-                <table class="transparent">
-                    <tr>
-                        <td>わ</td>
-                        <td>０</td>
-                        <td></td>
-                        <td>ら</td>
-                        <td>ｏ</td>
-                        <td></td>
-                        <td>や</td>
-                        <td>７</td>
-                        <td></td>
-                        <td>ま</td>
-                        <td>ｊ</td>
-                        <td></td>
-                        <td>は</td>
-                        <td>ｆ</td>
-                        <td></td>
-                        <td>な</td>
-                        <td>ｕ</td>
-                        <td></td>
-                        <td>た</td>
-                        <td>ｑ</td>
-                        <td></td>
-                        <td>さ</td>
-                        <td>ｘ</td>
-                        <td></td>
-                        <td>か</td>
-                        <td>ｔ</td>
-                        <td></td>
-                        <td>あ</td>
-                        <td>３</td>
-                    </tr>
-                    <tr>
-                        <td>　</td>
-                        <td>　</td>
-                        <td></td>
-                        <td>り</td>
-                        <td>ｌ</td>
-                        <td></td>
-                        <td>ゆ</td>
-                        <td>８</td>
-                        <td></td>
-                        <td>み</td>
-                        <td>ｎ</td>
-                        <td></td>
-                        <td>ひ</td>
-                        <td>ｖ</td>
-                        <td></td>
-                        <td>に</td>
-                        <td>ｉ</td>
-                        <td></td>
-                        <td>ち</td>
-                        <td>ａ</td>
-                        <td></td>
-                        <td>し</td>
-                        <td>ｄ</td>
-                        <td></td>
-                        <td>き</td>
-                        <td>ｇ</td>
-                        <td></td>
-                        <td>い</td>
-                        <td>ｅ</td>
-                    </tr>
-                    <tr>
-                        <td>を</td>
-                        <td>［</td>
-                        <td></td>
-                        <td>る</td>
-                        <td>．</td>
-                        <td></td>
-                        <td>よ</td>
-                        <td>９</td>
-                        <td></td>
-                        <td>む</td>
-                        <td>］</td>
-                        <td></td>
-                        <td>ふ</td>
-                        <td>２</td>
-                        <td></td>
-                        <td>ぬ</td>
-                        <td>１</td>
-                        <td></td>
-                        <td>つ</td>
-                        <td>ｚ</td>
-                        <td></td>
-                        <td>す</td>
-                        <td>ｒ</td>
-                        <td></td>
-                        <td>く</td>
-                        <td>ｈ</td>
-                        <td></td>
-                        <td>う</td>
-                        <td>４</td>
-                    </tr>
-                    <tr>
-                        <td>　</td>
-                        <td>　</td>
-                        <td></td>
-                        <td>れ</td>
-                        <td>；</td>
-                        <td></td>
-                        <td>　</td>
-                        <td>　</td>
-                        <td></td>
-                        <td>め</td>
-                        <td>／</td>
-                        <td></td>
-                        <td>へ</td>
-                        <td>＾</td>
-                        <td></td>
-                        <td>ね</td>
-                        <td>，</td>
-                        <td></td>
-                        <td>て</td>
-                        <td>ｗ</td>
-                        <td></td>
-                        <td>せ</td>
-                        <td>ｐ</td>
-                        <td></td>
-                        <td>け</td>
-                        <td>：</td>
-                        <td></td>
-                        <td>え</td>
-                        <td>５</td>
-                    </tr>
-                    <tr>
-                        <td>ん</td>
-                        <td>ｙ</td>
-                        <td></td>
-                        <td>ろ</td>
-                        <td>￥</td>
-                        <td></td>
-                        <td>　</td>
-                        <td>　</td>
-                        <td></td>
-                        <td>も</td>
-                        <td>ｍ</td>
-                        <td></td>
-                        <td>ほ</td>
-                        <td>－</td>
-                        <td></td>
-                        <td>の</td>
-                        <td>ｋ</td>
-                        <td></td>
-                        <td>と</td>
-                        <td>ｓ</td>
-                        <td></td>
-                        <td>そ</td>
-                        <td>ｃ</td>
-                        <td></td>
-                        <td>こ</td>
-                        <td>ｂ</td>
-                        <td></td>
-                        <td>お</td>
-                        <td>６</td>
-                    </tr>
-                </table>
-                <p>
-                    ※濁点、半濁点、カタカナが見逃された。漢字も見逃されたから、機能するために、ひらがなで書いてください。
-                </p>
-                例：
-                <div class="flexbox center">
-                    <div class="quote" style="width: 50%; font-style: normal;">
-                        <span class="tooltip">わたしはしわはらまくくろきはめつ！<span class="ttpopup">私はしわばら撒く黒き破滅!</span></span><br>
-                        <span class="tooltip">ほのおかさかまきたいちはしすむ！<span class="ttpopup">炎か逆巻きたい地端澄む！</span></span><br>
-                        <span class="tooltip">きさまはろき･･････<span class="ttpopup">貴様まはロキ･･････</span></span><br>
-                        <span class="tooltip">そうかねかいしゆうにきたののな。<span class="ttpopup">そうかね開始優に来たののな。</span>
+        <div class="card">
+            <div class="header"></div>
+            <div class="content">
+                <div id="latin">
+                    <div class="row">
+                        <div class="column-50">
+                            <div class="h2">Michael</div>
+                            <textarea type="text" id="michael-textbox" name="michael-textbox" autocomplete="off" placeholder="enter text here" rows="1"></textarea>
+                        </div>
+                        <div class="column-50">
+                            <div class="h2">Surtr</div>
+                            <textarea type="text" id="surtr-textbox" name="surtr-textbox" autocomplete="off" placeholder="...ut jiti?" rows="1"></textarea>
+                        </div>
                     </div>
-                    <div class="quote" style="width: 50%; font-style: normal;">
-                        <span class="tooltip">０ｑｄｆｄ０ふぉｊｈｈ￥ｇｆ／ｚ！<span class="ttpopup">０ｑｄｆｄ０ｆｏｊｈｈ￥ｇｆ／ｚ！</span></span><br>
-                        <span class="tooltip">ーｋ６ｔｘｔｊｇくぇあｆｄｒ］！<span class="ttpopup">ーｋ６ｔｘｔｊｇｑｅａｆｄｒ］！</span></span><br>
-                        ｇｘｊｆ￥ｇ･･････<br>
-                        <span class="tooltip">ｃ４ｔ，てｄ８４いｇｑｋく。<span class="ttpopup">ｃ４ｔ，ｔｅｄ８４ｉｇｑｋｋｕ。</span>
+                    <div class="row">
+                        <div class="column-100">
+                            <br>
+                            <div>
+                                Surtr's speech can be decoded by using a substitution cipher with the following key:
+                            </div>
+                            <br>
+                            <table class="transparent">
+                                <tr>
+                                    <td>A</td>
+                                    <td>B</td>
+                                    <td>C</td>
+                                    <td>D</td>
+                                    <td>E</td>
+                                    <td>F</td>
+                                    <td>G</td>
+                                    <td>H</td>
+                                    <td>I</td>
+                                    <td>J</td>
+                                    <td>K</td>
+                                    <td>L</td>
+                                    <td>M</td>
+                                    <td>N</td>
+                                    <td>O</td>
+                                    <td>P</td>
+                                    <td>Q</td>
+                                    <td>R</td>
+                                    <td>S</td>
+                                    <td>T</td>
+                                    <td>U</td>
+                                    <td>V</td>
+                                    <td>W</td>
+                                    <td>X</td>
+                                    <td>Y</td>
+                                    <td>Z</td>
+                                </tr>
+                                <tr>
+                                    <td>E</td>
+                                    <td>N</td>
+                                    <td>V</td>
+                                    <td>S</td>
+                                    <td>I</td>
+                                    <td>G</td>
+                                    <td>F</td>
+                                    <td>J</td>
+                                    <td>O</td>
+                                    <td>H</td>
+                                    <td>L</td>
+                                    <td>K</td>
+                                    <td>B</td>
+                                    <td>M</td>
+                                    <td>U</td>
+                                    <td>Y</td>
+                                    <td>W</td>
+                                    <td>T</td>
+                                    <td>D</td>
+                                    <td>R</td>
+                                    <td>A</td>
+                                    <td>C</td>
+                                    <td>Q</td>
+                                    <td>Z</td>
+                                    <td>P</td>
+                                    <td>X</td>
+                                </tr>
+                            </table>
+                            <br>
+                            <div>
+                                In-game, the only letters Surtr doesn't use are H and Z. If he does (if he ever will 😔), H will
+                                most likely correspond to J, and Z will most likely correspond to X.
+                            </div>
+                            <div>Letters with diacritics (ö, ú) are ignored.</div>
+                        </div>
                     </div>
                 </div>
+                <div id="japanese" style="display: none;">
+                    <div class="row">
+                        <div class="column-50">
+                            <div class="h2">ミカエル語</div>
+                            <textarea type="text" id="mikaeru-textbox" name="mikaeru-textbox" autocomplete="off" placeholder="ここでぶんをいれて" rows="1"></textarea>
+                        </div>
+                        <div class="column-50">
+                            <div class="h2">スルト語</div>
+                            <textarea type="text" id="suruto-textbox" name="suruto-textbox" autocomplete="off" placeholder="ｃ；ｓｍ･･･ｂｂ？" rows="1"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column-100">
+                            <br>
+                            <div>日本語でスルトの言うことをわかるのは･･･大変だ。</div>
+                            <div>しかし！やったよ！！スルト語の翻訳プログラムできた！！！！</div>
+                            <br>
+                            <div>どのように働く？電子キーは下：</div>
+                            <table class="transparent">
+                                <tr>
+                                    <td>わ</td>
+                                    <td>０</td>
+                                    <td></td>
+                                    <td>ら</td>
+                                    <td>ｏ</td>
+                                    <td></td>
+                                    <td>や</td>
+                                    <td>７</td>
+                                    <td></td>
+                                    <td>ま</td>
+                                    <td>ｊ</td>
+                                    <td></td>
+                                    <td>は</td>
+                                    <td>ｆ</td>
+                                    <td></td>
+                                    <td>な</td>
+                                    <td>ｕ</td>
+                                    <td></td>
+                                    <td>た</td>
+                                    <td>ｑ</td>
+                                    <td></td>
+                                    <td>さ</td>
+                                    <td>ｘ</td>
+                                    <td></td>
+                                    <td>か</td>
+                                    <td>ｔ</td>
+                                    <td></td>
+                                    <td>あ</td>
+                                    <td>３</td>
+                                </tr>
+                                <tr>
+                                    <td>　</td>
+                                    <td>　</td>
+                                    <td></td>
+                                    <td>り</td>
+                                    <td>ｌ</td>
+                                    <td></td>
+                                    <td>ゆ</td>
+                                    <td>８</td>
+                                    <td></td>
+                                    <td>み</td>
+                                    <td>ｎ</td>
+                                    <td></td>
+                                    <td>ひ</td>
+                                    <td>ｖ</td>
+                                    <td></td>
+                                    <td>に</td>
+                                    <td>ｉ</td>
+                                    <td></td>
+                                    <td>ち</td>
+                                    <td>ａ</td>
+                                    <td></td>
+                                    <td>し</td>
+                                    <td>ｄ</td>
+                                    <td></td>
+                                    <td>き</td>
+                                    <td>ｇ</td>
+                                    <td></td>
+                                    <td>い</td>
+                                    <td>ｅ</td>
+                                </tr>
+                                <tr>
+                                    <td>を</td>
+                                    <td>［</td>
+                                    <td></td>
+                                    <td>る</td>
+                                    <td>．</td>
+                                    <td></td>
+                                    <td>よ</td>
+                                    <td>９</td>
+                                    <td></td>
+                                    <td>む</td>
+                                    <td>］</td>
+                                    <td></td>
+                                    <td>ふ</td>
+                                    <td>２</td>
+                                    <td></td>
+                                    <td>ぬ</td>
+                                    <td>１</td>
+                                    <td></td>
+                                    <td>つ</td>
+                                    <td>ｚ</td>
+                                    <td></td>
+                                    <td>す</td>
+                                    <td>ｒ</td>
+                                    <td></td>
+                                    <td>く</td>
+                                    <td>ｈ</td>
+                                    <td></td>
+                                    <td>う</td>
+                                    <td>４</td>
+                                </tr>
+                                <tr>
+                                    <td>　</td>
+                                    <td>　</td>
+                                    <td></td>
+                                    <td>れ</td>
+                                    <td>；</td>
+                                    <td></td>
+                                    <td>　</td>
+                                    <td>　</td>
+                                    <td></td>
+                                    <td>め</td>
+                                    <td>／</td>
+                                    <td></td>
+                                    <td>へ</td>
+                                    <td>＾</td>
+                                    <td></td>
+                                    <td>ね</td>
+                                    <td>，</td>
+                                    <td></td>
+                                    <td>て</td>
+                                    <td>ｗ</td>
+                                    <td></td>
+                                    <td>せ</td>
+                                    <td>ｐ</td>
+                                    <td></td>
+                                    <td>け</td>
+                                    <td>：</td>
+                                    <td></td>
+                                    <td>え</td>
+                                    <td>５</td>
+                                </tr>
+                                <tr>
+                                    <td>ん</td>
+                                    <td>ｙ</td>
+                                    <td></td>
+                                    <td>ろ</td>
+                                    <td>￥</td>
+                                    <td></td>
+                                    <td>　</td>
+                                    <td>　</td>
+                                    <td></td>
+                                    <td>も</td>
+                                    <td>ｍ</td>
+                                    <td></td>
+                                    <td>ほ</td>
+                                    <td>－</td>
+                                    <td></td>
+                                    <td>の</td>
+                                    <td>ｋ</td>
+                                    <td></td>
+                                    <td>と</td>
+                                    <td>ｓ</td>
+                                    <td></td>
+                                    <td>そ</td>
+                                    <td>ｃ</td>
+                                    <td></td>
+                                    <td>こ</td>
+                                    <td>ｂ</td>
+                                    <td></td>
+                                    <td>お</td>
+                                    <td>６</td>
+                                </tr>
+                            </table>
+                            <br>
+                            <div>※濁点、半濁点、カタカナが見逃された。漢字も見逃されたから、機能するために、ひらがなで書いてください。</div>
+                            <br>
+                            <div>例：</div>
+                            <div class="row">
+                                <div class="column-50">
+                                    <div class="quote" style="font-style: normal;">
+                                        <span class="tooltip">わたしはしわはらまくくろきはめつ！<span class="ttpopup">私はしわばら撒く黒き破滅!</span></span><br>
+                                        <span class="tooltip">ほのおかさかまきたいちはしすむ！<span class="ttpopup">炎か逆巻きたい地端澄む！</span></span><br>
+                                        <span class="tooltip">きさまはろき･･････<span class="ttpopup">貴様まはロキ･･････</span></span><br>
+                                        <span class="tooltip">そうかねかいしゆうにきたののな。<span class="ttpopup">そうかね開始優に来たののな。</span>
+                                    </div>
+                                </div>
+                                <div class="column-50">
+                                    <div class="quote" style="font-style: normal;">
+                                        <span class="tooltip">０ｑｄｆｄ０ふぉｊｈｈ￥ｇｆ／ｚ！<span class="ttpopup">０ｑｄｆｄ０ｆｏｊｈｈ￥ｇｆ／ｚ！</span></span><br>
+                                        <span class="tooltip">ーｋ６ｔｘｔｊｇくぇあｆｄｒ］！<span class="ttpopup">ーｋ６ｔｘｔｊｇｑｅａｆｄｒ］！</span></span><br>
+                                        ｇｘｊｆ￥ｇ･･････<br>
+                                        <span class="tooltip">ｃ４ｔ，てｄ８４いｇｑｋく。<span class="ttpopup">ｃ４ｔ，ｔｅｄ８４ｉｇｑｋｋｕ。</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actions">
+                <button onclick="toggleEN()" class="latinav active">Latin alphabet / ローマ字</button>
+                <button onclick="toggleJP()" class="japanav">Japanese / 日本語</button>
             </div>
         </div>
+
+        <div id="dust-canvas"></div>
+        <img src="images/surtr.png" width="45%" class="mobilehide" id="bgpic">
     </main>
 
     <footer></footer>
-
-    <div id="viewport">
-        <div id="dust-canvas"></div>
-        <img src="images/surtr.png" width="45%" style="position: fixed; bottom: -30%; right: -10%; opacity: 0.45;">
-    </div>
 </body>
 
 </html>

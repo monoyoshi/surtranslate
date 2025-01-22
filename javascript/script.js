@@ -2,14 +2,21 @@ let $latin = $("#latin");
 let $japanese = $("#japanese");
 
 function toggleEN() {
+    $(".latinav").addClass("active");
+    $(".japanav").removeClass("active");
     $("textarea").val("");
-    $("#latin").css("display", "flex");
+    $("#latin").css("display", "block");
     $("#japanese").css("display", "none");
+
 };
 
 function toggleJP() {
+    $(".japanav").addClass("active");
+    $(".latinav").removeClass("active");
+    $("textarea").val("");
     $("#latin").css("display", "none");
-    $("#japanese").css("display", "flex");
+    $("#japanese").css("display", "block");
+
 };
 
 $(document).ready(function () {
@@ -33,16 +40,5 @@ $(document).ready(function () {
     $("#suruto-textbox").keyup(function () {
         let output = rmConvert($("#suruto-textbox").val());
         if (!output[1]) $("#mikaeru-textbox").val(kmConvert(output[0]));
-    });
-
-    $(".navbutton").click(function () {
-        if ($(this).text() == "Japanese / 日本語") {
-            $(this).attr("id", "active");
-            $(this).prev().removeAttr("id");
-        }
-        else {
-            $(this).attr("id", "active");
-            $(this).next().removeAttr("id");
-        }
     });
 });
