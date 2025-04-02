@@ -1,6 +1,5 @@
-* {
-    font-family: "M PLUS Rounded 1c", sans-serif;
-    font-weight: 900;
+main {
+    background: transparent;
 }
 
 .tooltip {
@@ -14,7 +13,6 @@
 [id*="-textbox"] {
     width: 100%;
     height: 100px;
-    font-size: 18px;
     resize: none;
 }
 
@@ -22,10 +20,7 @@
     background-color: var(--a_lightblue);
 }
 
-#bgpic {
-    position: fixed;
-    bottom: -30%;
-    right: -10%;
-    opacity: 0.45;
-    z-index: -99;
+#viewport {
+    background: url("images/surtr_trans.png") right -10vw bottom -25vh no-repeat, linear-gradient(var(--vpdeg), var(--a_darkerblue), var(--a_darkgray));
+    background-size: 45%;
 }

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <link rel="icon" type="image/png" href="https://cdn.bladewyrm.dev/global/images/favicon.png">
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <title>surtrspeak translator | bladewyrm.dev</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,15 +11,15 @@
     <!-- global -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdn.bladewyrm.dev/global/css/colors.css">
-    <link rel="stylesheet" href="https://cdn.bladewyrm.dev/global/css/fonts.css">
-    <link rel="stylesheet" href="https://cdn.bladewyrm.dev/global/css/style.css">
-    <link rel="stylesheet" href="https://cdn.bladewyrm.dev/global/css/mobile.css">
+    <link rel="stylesheet" href="https://cdn.bladewyrm.dev/css/colors.css">
+    <link rel="stylesheet" href="https://cdn.bladewyrm.dev/css/fonts.css">
+    <link rel="stylesheet" href="https://cdn.bladewyrm.dev/css/style.css">
+    <link rel="stylesheet" href="https://cdn.bladewyrm.dev/css/mobile.css">
 
-    <link rel="stylesheet" href="https://cdn.bladewyrm.dev/global/css/cursor.css">
-    <link rel="stylesheet" href="https://cdn.bladewyrm.dev/global/css/dust.css">
+    <link rel="stylesheet" href="https://cdn.bladewyrm.dev/css/cursor.css">
+    <link rel="stylesheet" href="https://cdn.bladewyrm.dev/css/dust.css">
 
     <!-- local -->
     <link rel="stylesheet" href="style.css">    
@@ -27,9 +27,9 @@
     <!-- scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-    <script src="https://cdn.bladewyrm.dev/global/javascript/boilerplate.js"></script>
-    <script src="https://cdn.bladewyrm.dev/global/javascript/cursor.js"></script>
-    <script src="https://cdn.bladewyrm.dev/global/javascript/dust.js"></script>
+    <script src="https://cdn.bladewyrm.dev/javascript/boilerplate.js"></script>
+    <script src="https://cdn.bladewyrm.dev/javascript/cursor.js"></script>
+    <script src="https://cdn.bladewyrm.dev/javascript/dust.js"></script>
 
 
     <!-- local -->
@@ -48,27 +48,23 @@
 </head>
 
 <body>
-    <div id="tap"></div>
-    <div id="drag"></div>
+    <div id="asset_cursor"></div>
 
     <header></header>
 
-    <main class="flex">
-        <div class="row">
-            <div class="column-100" style="text-align: center;">
-                <img src="images/logo.gif">
-            </div>
-        </div>
+    <main class="container">
         <div class="card">
-            <div class="header"></div>
+            <div class="header">surtranslate</div>
             <div class="content">
+                <img src="images/logo.gif" style="max-width: 100%;">
                 <div id="latin">
-                    <div class="row">
-                        <div class="column-50">
+                    <div class="row center">
+                        <div class="column-45">
                             <div class="h2">Michael</div>
                             <textarea type="text" id="michael-textbox" name="michael-textbox" autocomplete="off" placeholder="enter text here" rows="1"></textarea>
                         </div>
-                        <div class="column-50">
+                        <div class="column-5"></div>
+                        <div class="column-45">
                             <div class="h2">Surtr</div>
                             <textarea type="text" id="surtr-textbox" name="surtr-textbox" autocomplete="off" placeholder="...ut jiti?" rows="1"></textarea>
                         </div>
@@ -144,16 +140,18 @@
                                 most likely correspond to J, and Z will most likely correspond to X.
                             </div>
                             <div>Letters with diacritics (ö, ú) are ignored.</div>
+                            <br>
                         </div>
                     </div>
                 </div>
                 <div id="japanese" style="display: none;">
-                    <div class="row">
-                        <div class="column-50">
+                    <div class="row center">
+                        <div class="column-45">
                             <div class="h2">ミカエル語</div>
                             <textarea type="text" id="mikaeru-textbox" name="mikaeru-textbox" autocomplete="off" placeholder="ここでぶんをいれて" rows="1"></textarea>
                         </div>
-                        <div class="column-50">
+                        <div class="column-5"></div>
+                        <div class="column-45">
                             <div class="h2">スルト語</div>
                             <textarea type="text" id="suruto-textbox" name="suruto-textbox" autocomplete="off" placeholder="ｃ；ｓｍ･･･ｂｂ？" rows="1"></textarea>
                         </div>
@@ -161,10 +159,8 @@
                     <div class="row">
                         <div class="column-100">
                             <br>
-                            <div>日本語でスルトの言うことをわかるのは･･･大変だ。</div>
-                            <div>しかし！やったよ！！スルト語の翻訳プログラムできた！！！！</div>
+                            <div>電子キー：</div>
                             <br>
-                            <div>どのように働く？電子キーは下：</div>
                             <table class="transparent">
                                 <tr>
                                     <td>わ</td>
@@ -326,22 +322,48 @@
                             <div>※濁点、半濁点、カタカナが見逃された。漢字も見逃されたから、機能するために、ひらがなで書いてください。</div>
                             <br>
                             <div>例：</div>
-                            <div class="row">
-                                <div class="column-50">
+                            <br>
+                            <div class="row center">
+                                <div class="column-45">
                                     <div class="quote" style="font-style: normal;">
                                         <span class="tooltip">わたしはしわはらまくくろきはめつ！<span class="ttpopup">私はしわばら撒く黒き破滅!</span></span><br>
                                         <span class="tooltip">ほのおかさかまきたいちはしすむ！<span class="ttpopup">炎か逆巻きたい地端澄む！</span></span><br>
                                         <span class="tooltip">きさまはろき･･････<span class="ttpopup">貴様まはロキ･･････</span></span><br>
                                         <span class="tooltip">そうかねかいしゆうにきたののな。<span class="ttpopup">そうかね開始優に来たののな。</span>
                                     </div>
+                                    <br>
                                 </div>
-                                <div class="column-50">
+                                <div class="column-5"></div>
+                                <div class="column-45">
                                     <div class="quote" style="font-style: normal;">
                                         <span class="tooltip">０ｑｄｆｄ０ふぉｊｈｈ￥ｇｆ／ｚ！<span class="ttpopup">０ｑｄｆｄ０ｆｏｊｈｈ￥ｇｆ／ｚ！</span></span><br>
                                         <span class="tooltip">ーｋ６ｔｘｔｊｇくぇあｆｄｒ］！<span class="ttpopup">ーｋ６ｔｘｔｊｇｑｅａｆｄｒ］！</span></span><br>
                                         ｇｘｊｆ￥ｇ･･････<br>
                                         <span class="tooltip">ｃ４ｔ，てｄ８４いｇｑｋく。<span class="ttpopup">ｃ４ｔ，ｔｅｄ８４ｉｇｑｋｋｕ。</span>
                                     </div>
+                                    <br>
+                                </div>
+                            </div>
+                            <br class="mobileshow">
+                            <div class="row center mobileshow">
+                                <div class="column-45">
+                                    <div class="quote" style="font-style: normal;">
+                                        私はしわばら撒く黒き破滅!<br>
+                                        炎か逆巻きたい地端澄む！<br>
+                                        貴様まはロキ･･････<br>
+                                        そうかね開始優に来たののな。<br>
+                                    </div>
+                                    <br>
+                                </div>
+                                <div class="column-5"></div>
+                                <div class="column-45">
+                                    <div class="quote" style="font-style: normal;">
+                                        ０ｑｄｆｄ０ｆｏｊｈｈ￥ｇｆ／ｚ！<br>
+                                        ーｋ６ｔｘｔｊｇｑｅａｆｄｒ］！<br>
+                                        ｇｘｊｆ￥ｇ･･････<br>
+                                        ｃ４ｔ，ｔｅｄ８４ｉｇｑｋｋｕ。<br>
+                                    </div>
+                                    <br>
                                 </div>
                             </div>
                             <br>
@@ -354,10 +376,10 @@
                 <button onclick="toggleJP()" class="japanav">Japanese / 日本語</button>
             </div>
         </div>
-
-        <div id="dust-canvas"></div>
-        <img src="images/surtr.png" width="45%" class="mobilehide" id="bgpic">
     </main>
+
+    <div id="asset_dust"></div>
+    <div id="viewport"></div>
 
     <footer></footer>
 </body>
