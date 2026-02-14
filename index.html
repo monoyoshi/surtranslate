@@ -2,10 +2,11 @@
 <html lang="en">
 
 <head>
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    <title>surtrspeak translator | bladewyrm.dev</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surtr Dragalia Lost Translator</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="assets/favicon.png">
 
     <!-- stylesheets -->
     <!-- global -->
@@ -13,70 +14,47 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdn.bladewyrm.dev/css/colors.css">
-    <link rel="stylesheet" href="https://cdn.bladewyrm.dev/css/fonts.css">
-    <link rel="stylesheet" href="https://cdn.bladewyrm.dev/css/style.css">
-    <link rel="stylesheet" href="https://cdn.bladewyrm.dev/css/mobile.css">
+    <link rel="stylesheet" href="css/colors.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/mobile.css">
 
-    <link rel="stylesheet" href="https://cdn.bladewyrm.dev/css/cursor.css">
-    <link rel="stylesheet" href="https://cdn.bladewyrm.dev/css/dust.css">
+    <link rel="stylesheet" href="css/cursor.css">
 
-    <!-- local -->
-    <link rel="stylesheet" href="style.css">    
+    <link rel="stylesheet" href="css/styles.css">    
 
     <!-- scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-    <script src="https://cdn.bladewyrm.dev/javascript/boilerplate.js"></script>
-    <script src="https://cdn.bladewyrm.dev/javascript/cursor.js"></script>
-    <script src="https://cdn.bladewyrm.dev/javascript/dust.js"></script>
+    <script src="javascript/cursor.js"></script>
 
-
-    <!-- local -->
     <script src="javascript/script.js"></script>
     <script src="javascript/surtr.js"></script>
     <script src="javascript/suruto.js"></script>
 
-    <script src="https://unpkg.com/wanakana"></script>
-
-    <script>
-        // insert header and footer
-        $(document).ready(function () {
-            footer();
-        });
-    </script>
+    <script src="javascript/wanakana.js"></script>
 </head>
 
 <body>
-    <div id="asset_cursor"></div>
-
-    <header></header>
-
-    <main class="container">
-        <div class="card">
-            <div class="header">surtranslate</div>
-            <div class="content">
-                <img src="images/logo.gif" style="max-width: 100%;">
-                <div id="latin">
-                    <div class="row center">
-                        <div class="column-45">
-                            <div class="h2">Michael</div>
-                            <textarea type="text" id="michael-textbox" name="michael-textbox" autocomplete="off" placeholder="enter text here" rows="1"></textarea>
-                        </div>
-                        <div class="column-5"></div>
-                        <div class="column-45">
-                            <div class="h2">Surtr</div>
-                            <textarea type="text" id="surtr-textbox" name="surtr-textbox" autocomplete="off" placeholder="...ut jiti?" rows="1"></textarea>
-                        </div>
+    <div class="card">
+        <div class="header">Surtr Dragalia Lost Translator</div>
+        <div class="content">
+            <img src="assets/logo.gif" style="max-width: 100%;" class="br-bottom">
+            <div id="latin">
+                <div class="row center top">
+                    <div class="column-50">
+                        <h2>Michael</h2>
+                        <textarea type="text" id="michael-textbox" name="michael-textbox" autocomplete="off" placeholder="enter text here" rows="1"></textarea>
                     </div>
-                    <div class="row">
-                        <div class="column-100">
-                            <br>
-                            <div>
-                                Surtr's speech can be decoded by using a substitution cipher with the following key:
-                            </div>
-                            <br>
-                            <table class="transparent">
+                    <div class="column-50">
+                        <h2>Surtr</h2>
+                        <textarea type="text" id="surtr-textbox" name="surtr-textbox" autocomplete="off" placeholder="imrit rizr jiti" rows="1"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column-100">
+                        <p class="br-top br-bottom">Surtr's speech can be decoded by using a substitution cipher with the following key:</p>
+                        <table class="br-bottom">
+                            <tbody>
                                 <tr>
                                     <td>A</td>
                                     <td>B</td>
@@ -133,35 +111,48 @@
                                     <td>P</td>
                                     <td>X</td>
                                 </tr>
-                            </table>
-                            <br>
-                            <div>
-                                In-game, the only letters Surtr doesn't use are H and Z. If he does (if he ever will 😔), H will
-                                most likely correspond to J, and Z will most likely correspond to X.
+                            </tbody>
+                        </table>
+                        <p class="br-bottom">In-game, the only letters Surtr doesn't use are H and Z. If he does (if he ever will 😔), H will most likely correspond to J, and Z will most likely correspond to X.</p>
+                        <p class="br-bottom">Letters with diacritics (ö, ú) are ignored.</p>
+                        <p class="br-bottom">Example:</p>
+                        <div class="row center top br-bottom">
+                            <div class="column-100 br-bottom">
+                                <div class="quote">
+                                    <p>I am ruin the sower of death! My flames surge across the earth!</p>
+                                    <p>My flames surge across the earth!</p>
+                                    <p>You are Loki yes?</p>
+                                    <p>I take it you have come here to collect?</p>
+                                </div>
                             </div>
-                            <div>Letters with diacritics (ö, ú) are ignored.</div>
-                            <br>
+                            <div class="column-100 br-bottom">
+                                <div class="quote">
+                                    <p>O eb taom rji duqit ug sierj!</p>
+                                    <p>Bp gkebid datfi evtudd rji ietrj!</p>
+                                    <p>Pua eti Kulo pid?</p>
+                                    <p>O reli or pua jeci vubi jiti ru vukkivr?</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div id="japanese" style="display: none;">
-                    <div class="row center">
-                        <div class="column-45">
-                            <div class="h2">ミカエル語</div>
-                            <textarea type="text" id="mikaeru-textbox" name="mikaeru-textbox" autocomplete="off" placeholder="ここでぶんをいれて" rows="1"></textarea>
-                        </div>
-                        <div class="column-5"></div>
-                        <div class="column-45">
-                            <div class="h2">スルト語</div>
-                            <textarea type="text" id="suruto-textbox" name="suruto-textbox" autocomplete="off" placeholder="ｃ；ｓｍ･･･ｂｂ？" rows="1"></textarea>
-                        </div>
+            </div>
+            <div id="japanese" style="display: none;">
+                <div class="row center top">
+                    <div class="column-50">
+                        <h2>ミカエル語</h2>
+                        <textarea type="text" id="mikaeru-textbox" name="mikaeru-textbox" autocomplete="off" placeholder="ここでぶんをいれて" rows="1"></textarea>
                     </div>
-                    <div class="row">
-                        <div class="column-100">
-                            <br>
-                            <div>電子キー：</div>
-                            <br>
-                            <table class="transparent">
+                    <div class="column-50">
+                        <h2>スルト語</h2>
+                        <textarea type="text" id="suruto-textbox" name="suruto-textbox" autocomplete="off" placeholder="ｂｂｗ２ｙ［え；ｗ" rows="1"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column-100">
+                        <p class="br-top">電子キー：</p>
+                        <table class="transparent">
+                            <tbody>
                                 <tr>
                                     <td>わ</td>
                                     <td>０</td>
@@ -317,71 +308,65 @@
                                     <td>お</td>
                                     <td>６</td>
                                 </tr>
-                            </table>
-                            <br>
-                            <div>※濁点、半濁点、カタカナが見逃された。漢字も見逃されたから、機能するために、ひらがなで書いてください。</div>
-                            <br>
-                            <div>例：</div>
-                            <br>
-                            <div class="row center">
-                                <div class="column-45">
-                                    <div class="quote" style="font-style: normal;">
-                                        <span class="tooltip">わたしはしわはらまくくろきはめつ！<span class="ttpopup">私はしわばら撒く黒き破滅!</span></span><br>
-                                        <span class="tooltip">ほのおかさかまきたいちはしすむ！<span class="ttpopup">炎か逆巻きたい地端澄む！</span></span><br>
-                                        <span class="tooltip">きさまはろき･･････<span class="ttpopup">貴様まはロキ･･････</span></span><br>
-                                        <span class="tooltip">そうかねかいしゆうにきたののな。<span class="ttpopup">そうかね開始優に来たののな。</span>
-                                    </div>
-                                    <br>
-                                </div>
-                                <div class="column-5"></div>
-                                <div class="column-45">
-                                    <div class="quote" style="font-style: normal;">
-                                        <span class="tooltip">０ｑｄｆｄ０ふぉｊｈｈ￥ｇｆ／ｚ！<span class="ttpopup">０ｑｄｆｄ０ｆｏｊｈｈ￥ｇｆ／ｚ！</span></span><br>
-                                        <span class="tooltip">ーｋ６ｔｘｔｊｇくぇあｆｄｒ］！<span class="ttpopup">ーｋ６ｔｘｔｊｇｑｅａｆｄｒ］！</span></span><br>
-                                        ｇｘｊｆ￥ｇ･･････<br>
-                                        <span class="tooltip">ｃ４ｔ，てｄ８４いｇｑｋく。<span class="ttpopup">ｃ４ｔ，ｔｅｄ８４ｉｇｑｋｋｕ。</span>
-                                    </div>
-                                    <br>
+                            </tbody>
+                        </table>
+                        <p class="br-top br-bottom">※濁点、半濁点、カタカナが見逃された。漢字も見逃されたから、機能するために、ひらがなで書いてください。</p>
+                        <p class="br-bottom">例：</p>
+                        <div class="row center mobilehide br-bottom">
+                            <div class="column-50 br-bottom">
+                                <div class="quote">
+                                    <p><span class="tooltip">わたしはしわはらまくくろきはめつ！<span class="ttpopup">私はしわばら撒く黒き破滅!</span></span></p>
+                                    <p><span class="tooltip">ほのおかさかまきたいちはしすむ！<span class="ttpopup">炎か逆巻きたい地端澄む！</span></span></p>
+                                    <p><span class="tooltip">きさまはろき･･････<span class="ttpopup">貴様まはロキ･･････</span></span></p>
+                                    <p><span class="tooltip">そうかねかいしゆうにきたののな。<span class="ttpopup">そうかね開始優に来たののな。</span>
                                 </div>
                             </div>
-                            <br class="mobileshow">
-                            <div class="row center mobileshow">
-                                <div class="column-45">
-                                    <div class="quote" style="font-style: normal;">
-                                        私はしわばら撒く黒き破滅!<br>
-                                        炎か逆巻きたい地端澄む！<br>
-                                        貴様まはロキ･･････<br>
-                                        そうかね開始優に来たののな。<br>
-                                    </div>
-                                    <br>
-                                </div>
-                                <div class="column-5"></div>
-                                <div class="column-45">
-                                    <div class="quote" style="font-style: normal;">
-                                        ０ｑｄｆｄ０ｆｏｊｈｈ￥ｇｆ／ｚ！<br>
-                                        ーｋ６ｔｘｔｊｇｑｅａｆｄｒ］！<br>
-                                        ｇｘｊｆ￥ｇ･･････<br>
-                                        ｃ４ｔ，ｔｅｄ８４ｉｇｑｋｋｕ。<br>
-                                    </div>
-                                    <br>
+                            <div class="column-50 br-bottom">
+                                <div class="quote">
+                                    <p><span class="tooltip">０ｑｄｆｄ０ふぉｊｈｈ￥ｇｆ／ｚ！<span class="ttpopup">０ｑｄｆｄ０ｆｏｊｈｈ￥ｇｆ／ｚ！</span></span></p>
+                                    <p><span class="tooltip">ーｋ６ｔｘｔｊｇくぇあｆｄｒ］！<span class="ttpopup">ーｋ６ｔｘｔｊｇｑｅａｆｄｒ］！</span></span></p>
+                                    <p>ｇｘｊｆ￥ｇ･･････</p>
+                                    <p><span class="tooltip">ｃ４ｔ，てｄ８４いｇｑｋく。<span class="ttpopup">ｃ４ｔ，ｔｅｄ８４ｉｇｑｋｋｕ。</span>
                                 </div>
                             </div>
-                            <br>
+                        </div>
+                        <div class="row center mobileshow br-bottom">
+                            <div class="column-100 br-bottom">
+                                <div class="quote">
+                                    <p>私はしわばら撒く黒き破滅!</p>
+                                    <p>炎か逆巻きたい地端澄む！</p>
+                                    <p>貴様まはロキ･･････</p>
+                                    <p>そうかね開始優に来たののな。</p>
+                                </div>
+                            </div>
+                            <div class="column-100 br-bottom">
+                                <div class="quote">
+                                    <p>０ｑｄｆｄ０ｆｏｊｈｈ￥ｇｆ／ｚ！</p>
+                                    <p>ーｋ６ｔｘｔｊｇｑｅａｆｄｒ］！</p>
+                                    <p>ｇｘｊｆ￥ｇ･･････</p>
+                                    <p>ｃ４ｔ，ｔｅｄ８４ｉｇｑｋｋｕ。</p>
+                                </div>
+                            </div>
+                            <div class="column-100 br-bottom">
+                                <div class="quote">
+                                    <p>０ｑｄｆｄ０ふぉｊｈｈ￥ｇｆ／ｚ！</p>
+                                    <p>ーｋ６ｔｘｔｊｇくぇあｆｄｒ］！</p>
+                                    <p>ｇｘｊｆ￥ｇ･･････</p>
+                                    <p>ｃ４ｔ，てｄ８４いｇｑｋく。</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="actions">
-                <button onclick="toggleEN()" class="latinav active">Latin alphabet / ローマ字</button>
-                <button onclick="toggleJP()" class="japanav">Japanese / 日本語</button>
-            </div>
         </div>
-    </main>
+        <div class="actions">
+            <button onclick="toggleEN()" class="latinav active">Latin alphabet / ローマ字</button>
+            <button onclick="toggleJP()" class="japanav">Japanese / 日本語</button>
+        </div>
+    </div>
 
-    <div id="asset_dust"></div>
-    <div id="viewport"></div>
-
-    <footer></footer>
+    <footer>made with love and pure hyperfixation by <b>kyu(ren)</b> 💙🩶</footer>
 </body>
 
 </html>

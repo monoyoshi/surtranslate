@@ -1,0 +1,410 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background: url(../assets/surtr_trans.png) right -10vw bottom -25vh no-repeat, linear-gradient(to bottom right, #1b2d3f, #24242d);
+    background-size: 45%, 100%;
+}
+
+/* --------- */
+
+/* mobile display */
+
+@media only screen and not (max-width: 1279px) {
+    .mobileshow {
+        display: none !important;
+    }
+}
+
+@media only screen and (max-width: 1279px) {
+    .mobilehide {
+        display: none !important;
+    }
+}
+
+/* --------- */
+
+/* images */
+
+img {
+    display: inline-block;
+    height: auto;
+    width: auto;
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    pointer-events: none;
+    user-select: none;
+}
+
+.bgimage {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* --------- */
+
+.tooltip {
+    text-decoration: underline dotted var(--white);
+}
+
+[id*="-textbox"] {
+    width: 100%;
+    height: 96px;
+    resize: vertical;
+}
+
+#active {
+    background-color: var(--a_lightblue);
+}
+
+/* - - - - - - - - - */
+
+/* - - - - - - - - - */
+/* elements */
+/* - - - - - - - - - */
+
+footer {
+    position: fixed;
+    bottom: 4px;
+    color: var(--white);
+    font-size: 12px;
+    opacity: 0.3;
+    overflow: hidden;
+    user-select: none;
+    transition-duration: 500ms;
+    z-index: 99;
+}
+
+footer:hover {
+    opacity: 0.6;
+}
+
+@media only screen and not (max-width: 1079px) {
+    footer {
+        right: 8px;
+    }
+}
+@media only screen and (max-width: 1079px) {
+    footer {
+        width: 100vw;
+        text-align: center;
+    }
+}
+
+/* - - - - - - - - - */
+
+button,
+button:hover,
+button:hover:active,
+button.active {
+    color: var(--black);
+    text-decoration: none;
+    user-select: none;
+}
+
+button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    background-color: var(--white);
+    border: 3px solid var(--black);
+    border-radius: 1rem;
+    text-wrap: nowrap;
+}
+
+button:hover {
+    background-color: #b4d8f3;
+    transition-duration: 100ms;
+}
+
+button:hover:active,
+button.active {
+    background-color: #75bdea;
+}
+
+button:hover:active {
+    transform: scale(0.95);
+}
+
+/* - - - - - - - - - */
+
+img {
+    display: inline-block;
+    height: auto;
+    width: auto;
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* - - - - - - - - - */
+
+table {
+    margin: 0;
+    padding: 0;
+    color: inherit;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    width: fit-content;
+    vertical-align: baseline;
+    padding: 0;
+}
+
+th {
+    max-width: 20%;
+    padding-right: 1rem;
+    text-align: right;
+}
+
+th:not(.mscontent th) {
+    border-right: 1px solid var(--black);
+}
+
+td {
+    max-width: 80%;
+    padding-left: 1rem;
+}
+
+.darkmode th {
+    border-right: 1px solid var(--white);
+}
+
+/* - - - - - - - - - */
+
+/* row/column grid view */
+
+.row {
+    display: flex;
+    width: 100%;
+}
+
+.row.center {
+    justify-content: center;
+    align-items: center;
+}
+
+.row.center.top {
+    align-items: flex-start;
+}
+
+.column-100 {
+    width: 100%;
+}
+
+@media only screen and not (max-width: 719px) {
+    .column-50 {
+        width: 50%;
+    }
+
+    .column-50,
+    .column-100 {
+        padding: 0 16px;
+    }
+}
+
+@media only screen and (max-width: 719px) {
+    .column-50 {
+        width: 100%;
+    }
+
+    .row {
+        flex-direction: column;
+        padding: 0 16px;
+    }
+}
+
+/* - - - - - - - - - */
+
+/* card */
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, var(--black) 24px, var(--white) 24px);
+    background-color: var(--white);
+    border: 4px solid var(--black);
+    border-radius: 16px;
+    box-shadow: 0 8px 8px var(--shadow);
+    overflow: hidden;
+}
+
+@media only screen and not (max-width: 1279px) {
+    .card {
+        width: calc(100vw - 720px);
+        height: calc(100vh - 256px);
+    }
+}
+
+@media only screen and (max-width: 1279px) {
+    .card {
+        width: calc(100vw - 16px);
+        height: calc(100vh - 96px);
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+}
+
+/* --------- */
+
+.card > .header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 64px;
+    padding-left: 24px;
+    background: var(--a_darkblue) url(../assets/halftone/header_long.svg) right no-repeat;
+    background-size: contain;
+    border-bottom: 4px solid var(--black);
+    color: var(--white);
+    font-size: 16px;
+    font-weight: bold;
+    overflow: hidden;
+    user-select: none;
+}
+
+.card > .content {
+    height: 100%;
+    margin: 16px;
+    color: var(--black);
+    overflow-y: scroll;
+}
+
+.card > .actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 128px;
+    background-color: var(--lightgray);
+    background-size: 65% auto;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-image: url(../assets/halftone/dark.svg);
+    border-top: 3px solid var(--black);
+}
+
+.card > .actions > button {
+    width: 256px;
+    margin: 8px;
+    border-radius: 8px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.card > .actions > button:hover:active,
+.card > .actions > a.button:hover {
+    transition: 10ms;
+}
+
+@media only screen and not (max-width: 719px) {
+    
+    .card > .actions > button:first-child {
+        margin-left: 0;
+    }
+
+    .card > .actions > button:last-child {
+        margin-right: 0;
+    }
+}
+
+@media only screen and (max-width: 719px) {
+}
+
+/* - - - - - - - - - */
+
+/* indented text (notes, quotes, etc.) */
+.textbox, .quote {
+    padding: 16px;
+    padding-right: 32px;
+}
+
+.quote,
+.note {
+    width: calc(100%);
+    background-color: var(--a_darkgray);
+    color: var(--white);
+    border-left: 5px solid var(--a_lightblue);
+}
+
+/* - - - - - - - - - */
+
+/* tooltip (popup text on hover) */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    text-decoration: underline dotted;
+}
+
+.tooltip .ttpopup {
+    visibility: hidden;
+    opacity: 0;
+    width: max-content;
+    max-width: 600px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-top: -20px;
+    background-color: var(--a_darkgray);
+    color: var(--white);
+    border-radius: 1rem;
+    text-align: center;
+    font-weight: normal;
+    padding: 10px 15px 10px 15px;
+    box-shadow: 5px 5px 0 var(--shadow);
+    transform: translate(-50%, -75%);
+    transition: 0.3s;
+    z-index: 9;
+}
+
+.tooltip:hover .ttpopup {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltip .ttpopup::after {
+    content: " ";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: var(--a_darkgray) transparent transparent transparent;
+}
+
+/* - - - - - - - - - */
+
+/* line break */
+
+.br-top {
+    margin-top: 16px;
+}
+
+.br-bottom {
+    margin-bottom: 16px;
+}
+
+/* --------- */
